@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fbf7f2;
+  --surface: #ffffff;
+  --surface-2: #f3ece4;
+  --ink: #221a14;
+  --ink-2: #6b5e53;
+  --ink-3: #9a8d82;
+  --line: #e8dfd5;
+  --accent: #d9480f;
+  --accent-soft: #ffe8dc;
+
+  --wait-short: #1f8a4c;
+  --wait-short-bg: #e3f5ea;
+  --wait-mid: #a86200;
+  --wait-mid-bg: #fff1d6;
+  --wait-long: #c92a2a;
+  --wait-long-bg: #ffe3e3;
+  --wait-off: #6b6b6b;
+  --wait-off-bg: #ececec;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15110e;
+    --surface: #1f1a16;
+    --surface-2: #2a231e;
+    --ink: #f5ede6;
+    --ink-2: #c2b4a8;
+    --ink-3: #8c7f74;
+    --line: #382f28;
+    --accent: #ff7a3d;
+    --accent-soft: #3a2216;
+
+    --wait-short: #51cf86;
+    --wait-short-bg: #15301f;
+    --wait-mid: #ffc35c;
+    --wait-mid-bg: #352710;
+    --wait-long: #ff8787;
+    --wait-long-bg: #3a1a1a;
+    --wait-off: #a0a0a0;
+    --wait-off-bg: #2b2b2b;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-wait-short: var(--wait-short);
+  --color-wait-short-bg: var(--wait-short-bg);
+  --color-wait-mid: var(--wait-mid);
+  --color-wait-mid-bg: var(--wait-mid-bg);
+  --color-wait-long: var(--wait-long);
+  --color-wait-long-bg: var(--wait-long-bg);
+  --color-wait-off: var(--wait-off);
+  --color-wait-off-bg: var(--wait-off-bg);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  word-break: keep-all;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes pulse-soft {
+  50% {
+    opacity: 0.5;
+  }
+}
+.skeleton {
+  background: var(--surface-2);
+  animation: pulse-soft 1.4s ease-in-out infinite;
+  border-radius: 1rem;
+}
+
+/* Leaflet 핀 */
+.wait-pin {
+  background: transparent;
+  border: none;
+}
